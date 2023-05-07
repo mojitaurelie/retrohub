@@ -1,0 +1,34 @@
+{{ define "content" }}
+    {{ range $category := .Provider.Categories }}
+        {{ $links := $category.Links }}
+        <h2>{{ $category.Title }}</h2>
+        {{ $length := len $links }} {{ if eq $length 0 }}
+        <p>This category is empty for now :(</p>
+        {{ else }}
+            <table cellpadding="3" border="2" bgcolor="silver">
+                <thead>
+                <tr>
+                    <th bgcolor="white">Title</th>
+                    <th bgcolor="white">Information</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ range $link := $links }}
+                <tr>
+                    <td bgcolor="white">
+                        <a href="{{$link.URL}}">{{ $link.Title }}</a>
+                    </td>
+                    <td bgcolor="white">
+                        {{ $length := len $link.Description }} {{ if eq $length 0 }}
+                        <i>No description</i>
+                        {{ else }}
+                        {{$link.Description}}
+                        {{ end }}
+                    </td>
+                </tr>
+                {{ end }}
+                </tbody>
+            </table>
+        {{ end }}
+    {{ end }}
+{{ end }}

@@ -1,0 +1,26 @@
+{{ define "content" }}
+  {{ $length := len .UserAgent.String }} {{ if eq $length 0 }}
+  <i>No User-Agent provided by the browser</i>
+  {{ else }}
+  <p>Your User-Agent is <b>{{ .UserAgent.String }}</b></p>
+  <h3>Detailled information:</h3>
+  <ul>
+    {{ $length := len .UserAgent.Name }} {{ if not (eq $length 0) }}
+      <li>Browser name: <b>{{ .UserAgent.Name }}</b></li>
+    {{ end }}
+    {{ $length := len .UserAgent.Version }} {{ if not (eq $length 0) }}
+      <li>Browser version: <b>{{ .UserAgent.Version }}</b></li>
+    {{ end }}
+    {{ $length := len .UserAgent.OS }} {{ if not (eq $length 0) }}
+      <li>Browser OS: <b>{{ .UserAgent.OS }}</b></li>
+    {{ end }}
+    {{ $length := len .UserAgent.OSVersion }} {{ if not (eq $length 0) }}
+    <li>Browser OS Version: <b>{{ .UserAgent.OSVersion }}</b></li>
+    {{ end }}
+    {{ $length := len .UserAgent.Device }} {{ if not (eq $length 0) }}
+    <li>Device: <b>{{ .UserAgent.Device }}</b></li>
+    {{ end }}
+  </ul>
+  <small>This detailled information is provided by <a href="https://github.com/mileusna/useragent/">github.com/mileusna/useragent</a></small>
+  {{ end }}
+{{ end }}

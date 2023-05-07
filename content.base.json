@@ -1,0 +1,13 @@
+{
+  "categories": [
+    {
+      "title": "Cat 1",
+      "links": [
+        {
+          "title": "Link 1",
+          "url": "https://google.fr/"
+        }
+      ]
+    }
+  ]
+}

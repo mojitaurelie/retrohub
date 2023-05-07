@@ -1,0 +1,19 @@
+{{ define "base" }}
+    <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" content="text/html">
+        <title>Retro Hub</title>
+    </head>
+    <body>
+    <h1>Retro Hub</h1>
+    <p>Welcome to retro hub, this website reference some tools for older browsers</p>
+    <hr/>
+        <a href="/">List of websites</a> <a href="/ua">User-Agent information</a>
+    <hr/>
+        {{ template "content" . }}
+    <hr/>
+    <p>Retro Hub v{{ .Version }} powered by Go, made by thelilfrog (<a href="https://github.com/mojitaurelie">Github</a>, not available for old systems)</p>
+    </body>
+    </html>
+{{ end }}
