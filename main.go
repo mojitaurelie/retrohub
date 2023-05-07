@@ -10,6 +10,8 @@ func main() {
 	contentPath := flag.String("content", "content.json", "Set the content configuration path, this file is encoded in JSON")
 	serverPort := flag.Int("port", 8080, "Set the HTTP Server port")
 
+	flag.Parse()
+
 	if contentPath == nil {
 		contentPath = new(string)
 		*contentPath = "content.json"
